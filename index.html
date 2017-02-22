@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>My ShoPp</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- makes compatibel for all ie-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta name="description" content="">
+		<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+		<!-- bootstrap -->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">      
+		<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+		
+		<link href="themes/css/bootstrappage.css" rel="stylesheet"/>
+		
+		<!-- global styles -->
+		<link href="themes/css/flexslider.css" rel="stylesheet"/>
+		<link href="themes/css/main.css" rel="stylesheet"/>
+
+		<!-- scripts -->
+		<script src="themes/js/jquery-1.7.2.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>				
+		<script src="themes/js/superfish.js"></script>	
+		<script src="themes/js/jquery.scrolltotop.js"></script>
+		<!--[if lt IE 9]>			
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+
+			,statusCode: {0:function(){ window.location.replace("thankyou.html");},200:function(){window.location.replace("thankyou.html");}} 
+
+
+			<script src="js/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<script scr="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+	</script>
+	<script>
+	function postContactToGoogle(){
+		var firstname=$('#firstname').val();
+		var lastname=$('#lastname').val();
+
+		$.ajax({
+			url:"https://docs.google.com/forms/d/e/1FAIpQLScXYz3IdBakaldO8SBkx4FpyMnnuqqht4g3UHg9zbz-ieUu6g/formResponse",data:
+			{"entry_1238758158":firstname,"entry_560216494":lastname},type:"POST",datatype:"xml"
+		}); 
+	
+	}
+	
+	</script>
+    <body>		
+
+<form>
+Firstname: <input id="firstname" name="firstname" type="text" placeholder="firstname" /> <br/>
+Lastname: <input id="lastname" name="lastname" type="text" placeholder="lastname" /> <br/>
+<input id="ButtionSubmit" name="" type="button" value="send" onclick="postContactToGoogle()" />
+</form>
+
+    		
+    </body>
+</html>
